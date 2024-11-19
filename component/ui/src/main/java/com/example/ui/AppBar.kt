@@ -10,6 +10,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -23,7 +24,8 @@ fun AppBar(
 		title = {
 			Text(
 				modifier = Modifier.fillMaxSize(),
-				text = title
+				text = title,
+				textAlign = TextAlign.Center
 			)
 		},
 		modifier = Modifier.fillMaxSize(),

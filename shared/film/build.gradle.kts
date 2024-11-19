@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-	namespace = "com.example.listoffilms"
+	namespace = "com.example.film"
 	compileSdk = 34
 
 	defaultConfig {
@@ -27,25 +27,13 @@ android {
 	kotlinOptions {
 		jvmTarget = "1.8"
 	}
-	buildFeatures {
-		compose = true
-	}
-	composeOptions {
-		kotlinCompilerExtensionVersion = "1.5.1"
-	}
 }
 
 dependencies {
-	implementation(project(":component:ui"))
-	implementation(project(":shared:film"))
+
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)
 	implementation(libs.material)
-	implementation(libs.androidx.ui)
-	implementation(libs.androidx.activity.compose)
-	implementation(libs.androidx.material3)
-	implementation(libs.koin.core)
-	implementation(libs.koin.android)
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
