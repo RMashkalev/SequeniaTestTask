@@ -19,6 +19,10 @@ dependencyResolutionManagement {
 	}
 }
 
-rootProject.name = "SqueniaTestTask"
+rootProject.name = "SequeniaTestTask"
 include(":app")
- 
+include(":feature")
+include(":shared")
+include(":component:ui")
+include(":feature:listoffilms")
+include(":feature:film")

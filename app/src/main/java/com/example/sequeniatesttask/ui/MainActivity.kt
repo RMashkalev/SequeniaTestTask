@@ -1,4 +1,4 @@
-package com.example.squeniatesttask
+package com.example.sequeniatesttask.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.squeniatesttask.ui.theme.SqueniaTestTaskTheme
+import com.example.theme.SequeniaTestTaskTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
 		super.onCreate(savedInstanceState)
 		enableEdgeToEdge()
 		setContent {
-			SqueniaTestTaskTheme {
+			SequeniaTestTaskTheme {
 				Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 					Greeting(
 						name = "Android",
@@ -42,7 +42,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-	SqueniaTestTaskTheme {
+	SequeniaTestTaskTheme {
 		Greeting("Android")
 	}
 }

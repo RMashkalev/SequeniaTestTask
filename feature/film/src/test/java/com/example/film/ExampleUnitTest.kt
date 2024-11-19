@@ -1,4 +1,4 @@
-package com.example.squeniatesttask
+package com.example.film
 
 import org.junit.Test
 
