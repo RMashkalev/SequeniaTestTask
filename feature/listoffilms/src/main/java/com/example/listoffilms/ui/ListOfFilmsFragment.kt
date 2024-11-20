@@ -9,6 +9,10 @@ import androidx.fragment.app.Fragment
 import com.example.listoffilms.presentation.ListOfFilmsViewModel
 import com.example.listoffilms.ui.compose.ListOfFilmsScreen
 import com.example.ui.Screen
+import com.github.terrakok.cicerone.androidx.FragmentScreen
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+fun getFilmScreen() = FragmentScreen { ListOfFilmsFragment.newInstance() }
 
 class ListOfFilmsFragment : Fragment() {
 
@@ -25,7 +29,10 @@ class ListOfFilmsFragment : Fragment() {
 				Screen {
 					ListOfFilmsScreen(
 						uiStateFlow = viewModel.uiState,
-						applyIntent = viewModel::applyIntent,
+						onLoading = viewModel::loading,
+						onTryAgain = viewModel::tryAgain,
+						onFilmClick = viewModel::filmClick,
+						onGenreClick = viewModel::genreClick,
 					)
 				}
 			}

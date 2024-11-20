@@ -46,6 +46,8 @@ dependencies {
 	implementation(libs.androidx.material3)
 	implementation(libs.koin.core)
 	implementation(libs.koin.android)
+	implementation(libs.cicerone)
+	implementation(libs.androidx.lifecycle.runtime.ktx)
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)

@@ -5,7 +5,7 @@ plugins {
 
 android {
 	namespace = "com.example.squeniatesttask"
-	compileSdk = 34
+	compileSdk = 35
 
 	defaultConfig {
 		applicationId = "com.example.squeniatesttask"
@@ -50,6 +50,7 @@ dependencies {
 	implementation(project(":component:ui"))
 	implementation(project(":component:network"))
 	implementation(project(":feature:listoffilms"))
+	implementation(project(":shared:film"))
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
 	implementation(libs.androidx.activity.compose)
@@ -60,5 +61,6 @@ dependencies {
 	implementation(libs.androidx.ui)
 	implementation(libs.androidx.ui.tooling.preview)
 	implementation(libs.androidx.material3)
+	implementation(libs.cicerone)
 	testImplementation(libs.junit)
 }
