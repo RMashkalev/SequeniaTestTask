@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.genres.Genres
 import com.example.listoffilms.domain.usecase.GetAllFilmsUseCase
-import com.example.listoffilms.domain.usecase.GetFiltredFilmsUseCase
+import com.example.listoffilms.domain.usecase.GetFilteredFilmsUseCase
 import com.example.utils.usecase.GetStringByIdUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class ListOfFilmsViewModel(
 	private val getAllFilmsUseCase: GetAllFilmsUseCase,
-	private val getFiltredFilmsUseCase: GetFiltredFilmsUseCase,
+	private val getFilteredFilmsUseCase: GetFilteredFilmsUseCase,
 	private val getStringByIdUseCase: GetStringByIdUseCase,
 	router: ListOfFilmsRouter
 ) : ViewModel() {
@@ -50,7 +50,7 @@ class ListOfFilmsViewModel(
 
 		viewModelScope.launch(errorHandler) {
 			val newGenre = if (currentState.genre == genreTitle) null else genreTitle
-			val films = if (newGenre != null) getFiltredFilmsUseCase(genreLowerCaseTitle) else getAllFilmsUseCase()
+			val films = if (newGenre != null) getFilteredFilmsUseCase(genreLowerCaseTitle) else getAllFilmsUseCase()
 			_uiState.value = currentState.copy(
 				films = films,
 				genre = newGenre

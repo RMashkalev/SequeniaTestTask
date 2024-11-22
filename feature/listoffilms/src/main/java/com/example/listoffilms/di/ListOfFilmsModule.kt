@@ -5,7 +5,7 @@ import com.example.listoffilms.data.mapper.FilmsMapper
 import com.example.listoffilms.data.repository.ListOfFilmsRepositoryImpl
 import com.example.listoffilms.domain.repository.ListOfFilmsRepository
 import com.example.listoffilms.domain.usecase.GetAllFilmsUseCase
-import com.example.listoffilms.domain.usecase.GetFiltredFilmsUseCase
+import com.example.listoffilms.domain.usecase.GetFilteredFilmsUseCase
 import com.example.listoffilms.presentation.ListOfFilmsViewModel
 import com.example.network.createRetrofitService
 import com.example.network.getRetrofit
@@ -32,7 +32,7 @@ val listOfFilmsModule = module {
 	}
 
 	factory {
-		GetFiltredFilmsUseCase(
+		GetFilteredFilmsUseCase(
 			repository = get()
 		)
 	}
@@ -40,7 +40,7 @@ val listOfFilmsModule = module {
 	viewModel {
 		ListOfFilmsViewModel(
 			getAllFilmsUseCase = get(),
-			getFiltredFilmsUseCase = get(),
+			getFilteredFilmsUseCase = get(),
 			getStringByIdUseCase = get(),
 			router = get()
 		)

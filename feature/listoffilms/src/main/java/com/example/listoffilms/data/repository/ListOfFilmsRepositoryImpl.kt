@@ -14,7 +14,7 @@ class ListOfFilmsRepositoryImpl(
 		return dataSource.getAllFilms().films.map { mapper(it) }.sortedBy { it.localized_name }
 	}
 
-	override suspend fun getFiltredFilms(genre: String): List<Film> {
+	override suspend fun getFilteredFilms(genre: String): List<Film> {
 		return dataSource.getAllFilms().films.map { mapper(it) }.sortedBy { it.localized_name }.filter { it.genres.contains(genre) }
 	}
 

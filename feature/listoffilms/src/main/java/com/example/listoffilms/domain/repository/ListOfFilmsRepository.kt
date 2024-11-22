@@ -6,5 +6,5 @@ interface ListOfFilmsRepository {
 
 	suspend fun getAllFilms(): List<Film>
 
-	suspend fun getFiltredFilms(genre: String): List<Film>
+	suspend fun getFilteredFilms(genre: String): List<Film>
 }
