@@ -13,6 +13,5 @@ interface ListOfFilmsState {
 	data class Content(
 		val films: List<Film>,
 		val genre: String?,
-		val genreOptions: List<String>
-	)
+	) : ListOfFilmsState
 }

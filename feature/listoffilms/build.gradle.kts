@@ -37,6 +37,7 @@ android {
 
 dependencies {
 	implementation(project(":component:ui"))
+	implementation(project(":component:network"))
 	implementation(project(":shared:film"))
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)
@@ -44,10 +45,13 @@ dependencies {
 	implementation(libs.androidx.ui)
 	implementation(libs.androidx.activity.compose)
 	implementation(libs.androidx.material3)
+	implementation(libs.coil.compose)
 	implementation(libs.koin.core)
 	implementation(libs.koin.android)
 	implementation(libs.cicerone)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
+	implementation(libs.retrofit.converter.moshi)
+	implementation(libs.retrofit.moshi)
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)

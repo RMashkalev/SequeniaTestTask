@@ -12,10 +12,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.listoffilms.R
 import com.example.listoffilms.presentation.ListOfFilmsState
+import com.example.listoffilms.ui.Genres
 import com.example.ui.AppBar
 import com.example.ui.Error
 import com.example.ui.Loading
 import kotlinx.coroutines.flow.StateFlow
+import kotlin.reflect.KFunction1
 
 @Composable
 fun ListOfFilmsScreen(
@@ -23,7 +25,7 @@ fun ListOfFilmsScreen(
 	onLoading: () -> Unit,
 	onTryAgain: () -> Unit,
 	onFilmClick: () -> Unit,
-	onGenreClick: () -> Unit,
+	onGenreClick: KFunction1<Genres, Unit>,
 ) {
 	val snackBarHostState = SnackbarHostState()
 	val uiState by uiStateFlow.collectAsState()
@@ -36,7 +38,7 @@ fun ListOfFilmsScreen(
 			when (val state = uiState) {
 				is ListOfFilmsState.Initial -> onLoading()
 				is ListOfFilmsState.Loading -> Loading()
-//				is ListOfFilmsState.Content -> ListOfFilmsContent(uiState = state, onGenreClick = onGenreClick, onFilmClick = onFilmClick)
+				is ListOfFilmsState.Content -> ListOfFilmsContent(uiState = state, onGenreClick = onGenreClick, onFilmClick = onFilmClick)
 				is ListOfFilmsState.Error   -> Error(snackbarHostState = snackBarHostState, onTryAgain = onTryAgain)
 			}
 		}
