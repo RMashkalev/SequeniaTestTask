@@ -1,7 +1,9 @@
 package com.example.sequeniatesttask.di
 
+import com.example.filmdetail.presentation.FilmRouter
 import com.example.listoffilms.presentation.ListOfFilmsRouter
 import com.example.sequeniatesttask.navigation.buildCicerone
+import com.example.sequeniatesttask.navigation.router.FilmRouterImpl
 import com.example.sequeniatesttask.navigation.router.ListOfFilmsRouterImpl
 import com.example.sequeniatesttask.navigation.router.MainRouterImpl
 import com.example.sequeniatesttask.presentation.MainRouter
@@ -17,4 +19,6 @@ val navigationModule = module {
 	factory<MainRouter> { MainRouterImpl(get()) }
 
 	factory<ListOfFilmsRouter> { ListOfFilmsRouterImpl(get()) }
+
+	factory<FilmRouter> { FilmRouterImpl(get()) }
 }

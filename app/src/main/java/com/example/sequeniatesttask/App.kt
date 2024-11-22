@@ -2,6 +2,7 @@ package com.example.sequeniatesttask
 
 import android.app.Application
 import com.example.di.networkModule
+import com.example.filmdetail.di.filmModule
 import com.example.listoffilms.di.listOfFilmsModule
 import com.example.sequeniatesttask.di.mainModule
 import com.example.sequeniatesttask.di.navigationModule
@@ -24,6 +25,7 @@ class App : Application() {
 
 			modules(mainModule)
 			modules(listOfFilmsModule)
+			modules(filmModule)
 
 			modules(utilsModule)
 		}

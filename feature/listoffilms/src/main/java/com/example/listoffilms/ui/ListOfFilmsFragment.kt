@@ -12,7 +12,7 @@ import com.example.ui.Screen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-fun getFilmScreen() = FragmentScreen { ListOfFilmsFragment.newInstance() }
+fun getListOfFilmsScreen() = FragmentScreen { ListOfFilmsFragment.newInstance() }
 
 class ListOfFilmsFragment : Fragment() {
 

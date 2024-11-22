@@ -41,20 +41,20 @@ dependencies {
 	implementation(project(":shared:film"))
 	implementation(project(":shared:genres"))
 	implementation(project(":shared:utils"))
+
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)
+	implementation(libs.androidx.lifecycle.runtime.ktx)
 	implementation(libs.material)
 	implementation(libs.androidx.ui)
 	implementation(libs.androidx.activity.compose)
 	implementation(libs.androidx.material3)
-	implementation(libs.coil.compose)
+
 	implementation(libs.koin.core)
 	implementation(libs.koin.android)
+
 	implementation(libs.cicerone)
-	implementation(libs.androidx.lifecycle.runtime.ktx)
+
 	implementation(libs.retrofit.converter.moshi)
 	implementation(libs.retrofit.moshi)
-	testImplementation(libs.junit)
-	androidTestImplementation(libs.androidx.junit)
-	androidTestImplementation(libs.androidx.espresso.core)
 }

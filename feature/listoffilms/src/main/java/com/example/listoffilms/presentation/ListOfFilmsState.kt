@@ -2,7 +2,7 @@ package com.example.listoffilms.presentation
 
 import com.example.film.Film
 
-interface ListOfFilmsState {
+sealed interface ListOfFilmsState {
 
 	data object Initial : ListOfFilmsState
 

@@ -2,6 +2,7 @@ package com.example.listoffilms.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.film.Film
 import com.example.genres.Genres
 import com.example.listoffilms.domain.usecase.GetAllFilmsUseCase
 import com.example.listoffilms.domain.usecase.GetFilteredFilmsUseCase
@@ -15,7 +16,7 @@ class ListOfFilmsViewModel(
 	private val getAllFilmsUseCase: GetAllFilmsUseCase,
 	private val getFilteredFilmsUseCase: GetFilteredFilmsUseCase,
 	private val getStringByIdUseCase: GetStringByIdUseCase,
-	router: ListOfFilmsRouter
+	private val router: ListOfFilmsRouter
 ) : ViewModel() {
 
 	private val _uiState = MutableStateFlow<ListOfFilmsState>(ListOfFilmsState.Initial)
@@ -58,7 +59,7 @@ class ListOfFilmsViewModel(
 		}
 	}
 
-	fun filmClick() {
-
+	fun filmClick(film: Film) {
+		router.navigateToFilm(film = film)
 	}
 }

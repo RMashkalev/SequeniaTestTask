@@ -10,28 +10,39 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import com.example.film.Film
+import com.example.genres.Genres
 import com.example.listoffilms.R
 import com.example.listoffilms.presentation.ListOfFilmsState
 import com.example.ui.AppBar
+import com.example.ui.CustomSnackbar
 import com.example.ui.Error
 import com.example.ui.Loading
 import kotlinx.coroutines.flow.StateFlow
-import kotlin.reflect.KFunction1
 
 @Composable
 fun ListOfFilmsScreen(
 	uiStateFlow: StateFlow<ListOfFilmsState>,
 	onLoading: () -> Unit,
 	onTryAgain: () -> Unit,
-	onFilmClick: () -> Unit,
-	onGenreClick: KFunction1<com.example.genres.Genres, Unit>,
+	onFilmClick: (Film) -> Unit,
+	onGenreClick: (Genres) -> Unit,
 ) {
 	val snackBarHostState = SnackbarHostState()
 	val uiState by uiStateFlow.collectAsState()
 
 	Scaffold(
 		topBar = { AppBar(title = stringResource(id = R.string.list_of_films_label)) },
-		snackbarHost = { SnackbarHost(hostState = snackBarHostState) },
+		snackbarHost = {
+			SnackbarHost(
+				hostState = snackBarHostState,
+				snackbar = {
+					CustomSnackbar(
+						onAction = onTryAgain
+					)
+				}
+			)
+		},
 	) { paddingValues ->
 		Box(modifier = Modifier.padding(paddingValues)) {
 			when (val state = uiState) {

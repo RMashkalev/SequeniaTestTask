@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-	namespace = "com.example.ui"
+	namespace = "com.example.filmdetail"
 	compileSdk = 34
 
 	defaultConfig {
@@ -36,13 +36,21 @@ android {
 }
 
 dependencies {
-	implementation(platform(libs.androidx.compose.bom))
+	implementation(project(":component:ui"))
+	implementation(project(":shared:film"))
+
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)
+	implementation(libs.androidx.lifecycle.runtime.ktx)
 	implementation(libs.material)
-	implementation(libs.androidx.activity.compose)
 	implementation(libs.androidx.ui)
-	implementation(libs.androidx.ui.tooling.preview)
+	implementation(libs.androidx.activity.compose)
 	implementation(libs.androidx.material3)
+	implementation(libs.androidx.ui.tooling.preview)
 	implementation(libs.coil.compose)
+
+	implementation(libs.koin.core)
+	implementation(libs.koin.android)
+
+	implementation(libs.cicerone)
 }
