@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.listoffilms.R
 import com.example.listoffilms.presentation.ListOfFilmsState
-import com.example.listoffilms.ui.Genres
 import com.example.ui.AppBar
 import com.example.ui.Error
 import com.example.ui.Loading
@@ -25,7 +24,7 @@ fun ListOfFilmsScreen(
 	onLoading: () -> Unit,
 	onTryAgain: () -> Unit,
 	onFilmClick: () -> Unit,
-	onGenreClick: KFunction1<Genres, Unit>,
+	onGenreClick: KFunction1<com.example.genres.Genres, Unit>,
 ) {
 	val snackBarHostState = SnackbarHostState()
 	val uiState by uiStateFlow.collectAsState()

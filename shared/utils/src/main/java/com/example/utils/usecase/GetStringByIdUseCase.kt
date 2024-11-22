@@ -1,4 +1,4 @@
-package com.example.listoffilms.domain.usecase
+package com.example.utils.usecase
 
 import android.content.Context
 

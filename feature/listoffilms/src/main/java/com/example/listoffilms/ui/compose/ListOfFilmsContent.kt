@@ -23,9 +23,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.example.film.Film
+import com.example.genres.Genres
 import com.example.listoffilms.R
 import com.example.listoffilms.presentation.ListOfFilmsState
-import com.example.listoffilms.ui.Genres
 import com.example.theme.Background
 import com.example.theme.Secondary
 import com.example.theme.Typography
@@ -149,7 +149,7 @@ fun LazyListScope.filmsBlock(
 					onFilmClick = onFilmClick,
 				)
 			}
-			
+
 			if (filmsRow.size < FILMS_IN_ROW) {
 				for (i in filmsRow.size until FILMS_IN_ROW) {
 					Box(modifier = Modifier.weight(1.0f))

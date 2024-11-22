@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="biography">Биография</string>
+	<string name="action">Боевик</string>
+	<string name="detective">Детектив</string>
+	<string name="drama">Драма</string>
+	<string name="comedy">Комедия</string>
+	<string name="crime">Криминал</string>
+	<string name="melodrama">Мелодрама</string>
+	<string name="musical">Мюзикл</string>
+	<string name="adventures">Приключения</string>
+	<string name="thriller">Триллер</string>
+	<string name="horrors">Ужасы</string>
+	<string name="fantasy">Фантастика</string>
+
+	<string name="biography_lower_case">биография</string>
+	<string name="action_lower_case">боевик</string>
+	<string name="detective_lower_case">детектив</string>
+	<string name="drama_lower_case">драма</string>
+	<string name="comedy_lower_case">комедия</string>
+	<string name="crime_lower_case">криминал</string>
+	<string name="melodrama_lower_case">мелодрама</string>
+	<string name="musical_lower_case">мюзикл</string>
+	<string name="adventures_lower_case">приключения</string>
+	<string name="thriller_lower_case">триллер</string>
+	<string name="horrors_lower_case">ужасы</string>
+	<string name="fantasy_lower_case">фантастика</string>
+</resources>

@@ -2,10 +2,10 @@ package com.example.listoffilms.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.genres.Genres
 import com.example.listoffilms.domain.usecase.GetAllFilmsUseCase
 import com.example.listoffilms.domain.usecase.GetFiltredFilmsUseCase
-import com.example.listoffilms.domain.usecase.GetStringByIdUseCase
-import com.example.listoffilms.ui.Genres
+import com.example.utils.usecase.GetStringByIdUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

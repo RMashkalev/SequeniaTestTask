@@ -1,7 +1,6 @@
-package com.example.listoffilms.ui
+package com.example.genres
 
 import androidx.annotation.StringRes
-import com.example.listoffilms.R
 
 enum class Genres(@StringRes val title: Int, @StringRes val lowerCaseTitle: Int) {
 	BIOGRAPHY(R.string.biography, R.string.biography_lower_case),

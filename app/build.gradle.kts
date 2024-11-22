@@ -51,6 +51,7 @@ dependencies {
 	implementation(project(":component:network"))
 	implementation(project(":feature:listoffilms"))
 	implementation(project(":shared:film"))
+	implementation(project(":shared:utils"))
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
 	implementation(libs.androidx.activity.compose)
