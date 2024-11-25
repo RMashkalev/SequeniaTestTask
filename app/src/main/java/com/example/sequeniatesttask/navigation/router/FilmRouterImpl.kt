@@ -7,6 +7,6 @@ import com.github.terrakok.cicerone.Router
 class FilmRouterImpl(private val router: Router) : FilmRouter {
 
 	override fun navigateBack() {
-		router.navigateTo(getListOfFilmsScreen())
+		router.backTo(getListOfFilmsScreen())
 	}
 }
