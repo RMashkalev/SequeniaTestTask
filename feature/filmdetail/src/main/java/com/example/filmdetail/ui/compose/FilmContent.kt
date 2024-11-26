@@ -55,23 +55,25 @@ fun FilmContent(
 
 		Spacer(modifier = Modifier.padding(top = 8.dp))
 
-		GenresAndDate(
+		GenresAndYear(
 			genres = film.genres,
 			year = film.year
 		)
 
-		Spacer(modifier = Modifier.padding(top = 10.dp))
-
 		film.rating?.let {
+			Spacer(modifier = Modifier.padding(top = 10.dp))
+
 			Rating(rating = requireNotNull(film.rating))
 		}
 
-		Spacer(modifier = Modifier.padding(top = 14.dp))
+		film.description?.let {
+			Spacer(modifier = Modifier.padding(top = 14.dp))
 
-		Text(
-			text = film.description.toString(),
-			style = Typography.bodySmall
-		)
+			Text(
+				text = film.description.toString(),
+				style = Typography.bodySmall
+			)
+		}
 
 		Spacer(modifier = Modifier.padding(top = 15.dp))
 	}
@@ -79,14 +81,22 @@ fun FilmContent(
 }
 
 @Composable
-private fun GenresAndDate(
+private fun GenresAndYear(
 	genres: List<String>,
 	year: Int
 ) {
-	Text(
-		text = "${genres.joinToString(separator = ", ")}, $year ${stringResource(id = R.string.year)}",
-		style = Typography.bodyMedium
-	)
+	if (genres.isEmpty()) {
+		Text(
+			text = "$year ${stringResource(id = R.string.year)}",
+			style = Typography.bodyMedium
+		)
+	} else {
+		Text(
+			text = "${genres.joinToString(separator = ", ")}, $year ${stringResource(id = R.string.year)}",
+			style = Typography.bodyMedium
+		)
+	}
+
 }
 
 @Composable
